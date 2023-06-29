@@ -5,9 +5,5 @@ config:
       arrivalRate: 20
 scenarios:
   - flow:
-      - post:
-          url: "/users"
-          json:
-            name: "Test"
-            email: "test@example.com"
-            password: "Password123"
+      - get:
+          url: "/posts/all"

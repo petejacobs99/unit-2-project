@@ -6,7 +6,7 @@ exports.createPost = async (req, res) => {
         const post = new Post(req.body)
         await post.save()
         const token = await post.generateAuthToken()
-        res.status(200).json(post)
+        res.status(200).json({post, token})
     } catch (error) {
         res.status(400).json({message: error.message})
     }
