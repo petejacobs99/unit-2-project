@@ -9,10 +9,6 @@ const postSchema = new mongoose.Schema({
 })
 
 
-postSchema.methods.generateAuthToken = async function() {
-  const token = jwt.sign({ _id: this._id }, 'secret')
-  return token
-}
 
 const Post = mongoose.model('Post', postSchema)
 
