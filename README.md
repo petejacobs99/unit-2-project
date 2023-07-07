@@ -177,3 +177,53 @@ In the body of the request create a title, body, and user field and input data t
 your response should look like this:
 
 <img src="/screenshots/Screenshot 2023-07-06 at 9.25.50 PM.png">
+
+# To Update A Blog Post
+change the URL you want to send the request to to localhost:3000/posts/<inster the ID of the post you wish to change here>
+Example:
+```
+localhost:3000/posts/64a769465d2f2810e55b189a
+```
+Change your request type to a put request
+Update your post in the body of the request
+Example:
+```
+{
+    "title": "My First Post",
+    "body": "this is UPDATED test text",
+    "user": "649708603e95e9a47cbf4186"
+}
+```
+Hit send and you should recieve back your updated post
+
+# To View A Single Post
+
+Make a get request to localhost:3000/posts/<The ID of the post you wish to view>
+Example:
+```
+localhost:3000/posts/64a769465d2f2810e55b189a
+```
+# To View All Posts
+
+Make a get request to localhost:3000/posts/all
+
+# To Delete a Post
+
+Make a delete request to localhost:3000/posts/<The ID of the post you wish to view>
+Example:
+```
+localhost:3000/posts/64a769465d2f2810e55b189a
+```
+you will recieve back a status code 204 letting you know the post has been deleted
+
+# RUNNING TESTS 
+This API has built-in tests to make sure it is operating properly
+run these tests to make sure the API is working properly, or when you make changes to make sure you did not make breaking changes.
+
+in order to run these test you will need to run your server in one terminal windown and open a second terminal window and type "npm run test"
+```
+npm run test
+```
+If all tests completed properly your console will look like this:
+
+<img src="/screenshots/Screenshot 2023-07-07 at 11.50.40 AM.png">

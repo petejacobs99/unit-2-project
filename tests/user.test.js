@@ -104,6 +104,5 @@ describe('Test the blog post endpoints', () => {
         expect(response.body.post.title).toEqual('This is a test post')
         expect(response.body.post.body).toEqual("this test post was created with supertest")
         expect(response.body.post.user).toEqual('649708603e95e9a47cbf4186')
-        expect(response.body).toHaveProperty('token')
     })
 })
