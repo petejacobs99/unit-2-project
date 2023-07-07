@@ -40,6 +40,8 @@ cd example_directory
 ```
 git clone git@github.com:petejacobs99/unit-2-project.git
 ```
+#### cd into the directory created by the git clone
+
 #### Open the API in VSCode by typing "code ." in your command line
 
 ```
@@ -61,7 +63,117 @@ npm i
 # example .env file
 
 ```
-MONGO_URI=mongodb+srv://exampleuser:examplepassword@mygadatabase.f2qsu8n.mongodb.net/Unit_2_Project
+MONGO_URI=mongodb+srv://exampleuser:examplepassword@mydatabase.f2qsu8n.mongodb.net/your_project
 SECRET=cookies
 PORT=3000
 ```
+
+# RUN THE API IN DEV MODE
+
+You can now run the API in dev mode by typing "npm run dev" in the vs code terminal.
+```
+npm run dev
+```
+
+this will start the app and you will get two messages in your console
+```
+We in the building 3000
+Mongo is showing love
+```
+the first one lets you know the server is running and listening on port 3000
+the second one lets us know Mongo DB has been connected properly
+
+# MAKING REQUESTS IN POSTMAN
+
+the first thing we need to do it create a user to use the API
+
+open Postman and make a new request.
+set the request type to POST
+enter the URL you wish to send the request to which would be
+```
+localhost:3000/users
+```
+navigate to the body tab, select raw, and set the type to JSON
+
+#### Sending your first request:
+
+In the text field type the follorwing:
+```
+{
+    "name": "First Last",
+    "email": "FirstLast@gmail.com",
+    "password": "bubba123"
+}
+```
+and hit send to send the request and data to your server!
+
+Your response should look similar to this:
+
+<img src="/screenshots/Screenshot%202023-07-06%20at%208.48.37%20PM.png">
+
+# Login a User
+
+to log in a user, change the URL to localhost:3000/users/login
+and almost the same request, just remove the name field
+your request would look like:
+```
+{
+    "email": "FirstLast@gmail.com",
+    "password": "bubba123"
+}
+```
+
+and your response will look similar to:
+
+<img src="/screenshots/Screenshot%202023-07-06%20at%208.48.37%20PM.png">
+
+# To Update A User
+
+change your request type to a put request in postman
+
+change your URL to ocalhost:3000/users/<The ID of the user you wish to update>
+
+and in your request body, make the changes you wish to make to your user. such as updating the email.
+
+hit send to send the request
+
+your response will look similar to the one below, with the updated email in body of the response.
+
+<img src="/screenshots/Screenshot 2023-07-06 at 9.07.12 PM.png">
+
+# To Delete A User
+
+YOU MUST LOG A USER IN AGAIN TO DELETE ONE
+
+When you log the user in, in your response there will be a token. copy the long string inside the token. Navigate to the authorization page in postman and change your type to Bearer. paste the string you copied into the field given.
+
+you have succesfully logged in, recieved your token, and put your token in the Bearer slot to authorize your user to delete and account.
+
+To continue deleting your user, in your request body put the email and password of the user you would like to delete:
+```
+{
+    "email": "FirstMiddleLast@gmail.com",
+    "password": "bubba123"
+}
+```
+
+when you hit send you will get a response back that says user deleted and your user will be deleted.
+
+# To Create A Blog Post
+## You must have a Bearer token for every blog post action. Make sure you take the steps to log in and get your token and put the token in the correct spot in order to make posts.
+
+Once logged in, change your URL to localhost:3000/posts/create and your request type to POST
+
+In the body of the request create a title, body, and user field and input data to test. Example:
+
+```
+{
+    "title": "My First Post",
+    "body": "this is test text",
+    "user": "649708603e95e9a47cbf4186"
+}
+```
+
+your response should look like this:
+
+<img src="/screenshots/Screenshot 2023-07-06 at 9.25.50 PM.png">
