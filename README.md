@@ -3,6 +3,9 @@
 
 ### Trello: https://trello.com/b/C65CvUqD/blog-api
 
+### Data Diagram
+<img src="/screenshots/Screenshot 2023-07-08 at 10.15.28 AM.png">
+
 Welcome to my blog API this API is the backend framework for allowing users to log in, update their account, post blog posts, and index/read blog posts.
 
 # FOLLOW THESE STEPS TO RUN THE API ON YOUR LOCAL MACHINE
