@@ -227,3 +227,9 @@ npm run test
 If all tests completed properly your console will look like this:
 
 <img src="/screenshots/Screenshot 2023-07-07 at 11.50.40 AM.png">
+
+# To Run The App Normally, not in dev mode:
+type node server.js into your terminal
+```
+node server.js
+```
